@@ -1,11 +1,7 @@
 //create variables to store all data database, user database, and top 4 results appeared
 let dataTitle = new Map();
 let user = [];
-let highestResult = "",
-  secondHighestResult = "",
-  thirdHighestResult = "",
-  forthHighestResult = "";
-
+let highestResult = "", secondHighestResult = "";
 //Temporary workaround as all data is local not on server
 for (let i = 1; i <= 5; i++) {
   //I was going to use getJson but it was async
