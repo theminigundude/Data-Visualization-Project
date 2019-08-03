@@ -1,0 +1,23 @@
+
+canvas {
+  width: 80% !important;
+  height: auto !important;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.sticky_right {
+  right: 40px;
+  top: 30px;
+  position:fixed;
+}
+
+h1 {
+  writing-mode: vertical-rl;
+  font-size: 82px !important;
+}
+
+#ctnr {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
