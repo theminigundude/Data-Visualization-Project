@@ -2,7 +2,7 @@
 
 ## How to Run
 -------------
-Once downloaded or cloned, simply click on home.html and it should open in your browser
+Once downloaded or cloned, you need to put the files into a local server to run due to aJax.
 
 ## Future Updates
 -----------------
