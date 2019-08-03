@@ -41,11 +41,9 @@ for (let i = 1; i <= 5; i++) {
               dataTitle.set(result.title, data);
             }
             //update latest number - which results appeared top 4 most frequently
-            if (highestResult == "" || secondHighestResult == "" || thirdHighestResult == "" || forthHighestResult == "") {
+            if (highestResult == "" || secondHighestResult == "") {
               highestResult = result.title;
               secondHighestResult = result.title;
-              thirdHighestResult = result.title;
-              forthHighestResult = result.title;
             } else if (data.numberAppeared >= dataTitle.get(highestResult).numberAppeared) {
               highestResult = result.title;
             } else if (data.numberAppeared > dataTitle.get(secondHighestResult).numberAppeared && data.search != dataTitle.get(highestResult).search) {
@@ -65,7 +63,8 @@ for (let count = 1; count <= 5; count++) {
   secondHighestResultData.push(dataTitle.get(secondHighestResult)['numberTest' + count]);
 }
 
-
+//list of colors for charts
+const bgColor = [ 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)'];
 //create two charts based on data
 let ctx = document.getElementById('first').getContext('2d');
 let myChart = new Chart(ctx, {
@@ -75,13 +74,7 @@ let myChart = new Chart(ctx, {
     datasets: [{
       label: '# of Votes',
       data: highestResultData,
-      backgroundColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)'
-      ],
+      backgroundColor: bgColor,
       borderWidth: 1
     }]
   },
@@ -130,13 +123,7 @@ let myChart2 = new Chart(ctx2, {
     datasets: [{
       label: '# of Votes',
       data: secondHighestResultData,
-      backgroundColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)'
-      ],
+      backgroundColor: bgColor,
       borderWidth: 1
     }]
   },
