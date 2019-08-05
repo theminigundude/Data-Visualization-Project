@@ -24,6 +24,7 @@ for (let i = 1; i <= 5; i++) {
             if (!dataTitle.has(result.title)) {
               data.search = searchTerm;
               data.searchUrl = result.url;
+              data.searchPageNum = result.searchQueryPageNum;
               data.numberAppeared = 1;
               data['numberTest' + i] = 1;
               dataTitle.set(result.title, data);
@@ -40,7 +41,7 @@ for (let i = 1; i <= 5; i++) {
               }
               dataTitle.set(result.title, data);
             }
-            //update latest number - which results appeared top 4 most frequently
+            //update latest number - which results appeared top 2 most frequently
             if (highestResult == "" || secondHighestResult == "") {
               highestResult = result.title;
               secondHighestResult = result.title;
@@ -95,7 +96,8 @@ let myChart = new Chart(ctx, {
           fontSize: 40
         },
         scaleLabel: {
-          display: false
+          display: true,
+          labelString: highestResult
         },
         gridLines: {
           display: false,
@@ -143,7 +145,8 @@ let myChart2 = new Chart(ctx2, {
           display: false
         },
         scaleLabel: {
-          display: false,
+          display: true,
+          labelString: secondHighestResult
         },
         gridLines: {
           display: false,
